@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://caption"
+        messagesPack="com.company.finance.web">
+    <layout expand="resultHBox" margin="true">
+        <hbox spacing="true">
+            <vbox spacing="true">
+                <label value="Category"/>
+                <textField id="categoryTextField" width="201px"/>
+            </vbox>
+            <vbox spacing="true">
+                <label value="Date"/>
+                <dateField id="dateField"/>
+            </vbox>
+        </hbox>
+        <vbox spacing="true" margin="false,false,true,false">
+            <label value="Result"/>
+            <textField id="resultTextField"/>
+        </vbox>
+        <hbox id="resultHBox" spacing="true" width="100%" height="100%">
+            <button invoke="onButtonClick" id="button" caption="Ok" width="100px"/>
+        </hbox>
+    </layout>
+</window>

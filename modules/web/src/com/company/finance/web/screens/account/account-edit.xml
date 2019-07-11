@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://editorCaption"
+        focusComponent="form"
+        messagesPack="com.company.finance.web.screens.account">
+    <data>
+        <instance id="accountDc"
+                  class="com.company.finance.entity.Account"
+                  view="_local">
+            <loader/>
+        </instance>
+        <collection id="operationsDc" class="com.company.finance.entity.Operation" view="_local">
+            <loader id="operationsDl">
+                <query><![CDATA[select e from finance_Operation e where e.account=:account]]></query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="editActions" spacing="true">
+        <form id="form" dataContainer="accountDc">
+            <column width="250px">
+                <textField id="nameField" property="name"/>
+                <textField id="currencyField" property="currency"/>
+                <textField id="meansField" property="means"/>
+            </column>
+        </form>
+        <label value="Operation"/>
+        <table id="operationsDcTable" height="170px" width="338px" dataContainer="operationsDc">
+            <columns>
+                <column id="type"/>
+                <column id="amount"/>
+                <column id="comment"/>
+                <column id="date"/>
+                <column id="category"/>
+            </columns>
+        </table>
+        <hbox id="editActions" spacing="true">
+            <button action="windowCommitAndClose"/>
+            <button action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<menu-config xmlns="http://schemas.haulmont.com/cuba/menu.xsd">
+    <menu id="finance" insertBefore="administration">
+        <item screen="finance_Account.browse"/>
+        <item screen="finance_Operation.browse"/>
+        <item screen="finance_NewScreen"/>
+        <item screen="finance_DateExpenses"/>
+    </menu>
+</menu-config>
